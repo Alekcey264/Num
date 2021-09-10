@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+float maximum(float x, float y, float u, float h)
+{
+  if (x>y)&&(x>u)
+  {
+    h = x;
+    printf("max=", x);
+  }
+  else
+  {
+    if (y>x)&&(y>u)
+    {
+      h = y;
+      printf("max=", y);
+    }
+    else
+    {
+    h = u;
+    printf("max=", u);
+    }
+  }
+  return (h);
+}
+
+float minimum(float x, float y, float u, float h)
+{
+  if (x<y)&&(x<u)
+  {
+    h = x;
+    printf("min=", x);
+  }
+  else
+  {
+    if (y<x)&&(y<u)
+    {
+      h = y;
+      printf("min=", y);
+    }
+    else
+    {
+    h = u;
+    printf("min=", u);
+    }
+  }
+  return (h)
+}
+
+
+int main()
+{
+  float a,b,c,max,s;
+  printf("a= ");
+  scanf("%f", &a);
+  printf("b= ");
+  scanf("%f", &b);
+  printf("c= ");
+  scanf("%f", &c);
+  s = a+b+c;
+  if (maximum(a,b,c)/2 == 0)
+  {
+    printf("\n", maximum(a,b,c)/s);
+  }
+  else
+  {
+    
+  }
+}
