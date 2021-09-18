@@ -24,17 +24,17 @@ int main()
     {
         f = perv(x);
         if (f >= 0)
-        printf("%.1f\t\t %.1f\n", x, f);
+        printf("%.2f\t\t %.2f\n", x, f);
         else
-        printf("%.1f\t\t%.1f\n", x, f);
+        printf("%.2f\t\t%.2f\n", x, f);
     }
-    for (x = 1.0; x <= 2.1; x += sh)
+    for (x = 1.0; x <= 2.0; x += sh)
     {
         f = vtor(x);
         if (f >= 0)
-        printf("%.1f\t\t %.1f\n", x, f);
+        printf("%.2f\t\t %.2f\n", x, f);
         else
-        printf("%.1f\t\t%.1f\n", x, f);
+        printf("%.2f\t\t%.2f\n", x, f);
     }
     return 0;
 }
