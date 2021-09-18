@@ -25,9 +25,9 @@ int main()
     {
         f = perv(x);
         if (f > 0)
-        printf("%.1f\t\t %.1f\n", x, f);
+        printf("%.2f\t\t %.2f\n", x, f);
         else
-        printf("%.1f\t\t%.1f\n", x, f);
+        printf("%.2f\t\t%.2f\n", x, f);
         x = x + sh;
     }
     while ((x >= 0) && (x <= 1));
@@ -35,11 +35,11 @@ int main()
     {
         f = vtor(x);
         if (f > 0)
-        printf("%.1f\t\t %.1f\n", x, f);
+        printf("%.2f\t\t %.2f\n", x, f);
         else
-        printf("%.1f\t\t%.1f\n", x, f);
+        printf("%.2f\t\t%.2f\n", x, f);
         x = x + sh;
     }
-    while ((x > 1) && (x <= 2.1));
+    while ((x > 1) && (x <= 2));
     return 0;
 }
