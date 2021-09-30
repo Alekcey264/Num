@@ -56,6 +56,6 @@ int main()
     n = 2 * n;
     }
     while (del >= eps);
-    printf("%.5f\n", integral);
+    printf("%f\n", integral);
     return 0;
 }
