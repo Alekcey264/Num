@@ -5,14 +5,14 @@ float perv(float t)
 {
     float k = sqrt(t + 1) - sqrt(t) - 0.5;
     return (k);
-};
+}
 
 float vtor(float j)
 {
     float a = - j - (1 / j);
     float p = exp(a);
     return (p);
-};
+}
 
 int main()
 {
@@ -23,6 +23,7 @@ int main()
     printf("x\t\t f(x)\n---------------------\n");
     do
     {
+        x = floorf(x * 100000) / 100000;
         f = perv(x);
         if (f > 0)
         printf("%.2f\t\t %.2f\n", x, f);
@@ -33,6 +34,7 @@ int main()
     while ((x >= 0) && (x <= 1));
     do
     {
+        x = floorf(x * 100000) / 100000;
         f = vtor(x);
         if (f > 0)
         printf("%.2f\t\t %.2f\n", x, f);
