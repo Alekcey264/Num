@@ -2,20 +2,19 @@
 
 int krec (int num)
 {
-    if (num > 0)
-      return 1 + krec(num / 10);
-    return 0;
+    return num > 0 ? 1 + krec(num / 10) : 0;
+      //return 1 + krec(num / 10);
+    //return 0;
 }
 
 int kch (int num)
 {
-  int u = 0;
-    for (int i = 0; num > 0; i++)
-    {
-      u++;
-      num = num / 10;
-    }
-  return u;
+    int i;
+      for (i = 0; num > 0; i++)
+      {
+          num = num / 10;
+      }
+    return i;
 }
 
 int main()
