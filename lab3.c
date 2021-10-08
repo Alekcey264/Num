@@ -16,31 +16,35 @@ float vtor(float j)
 
 int main()
 {
-    float f, sh;
-    float x = 0;
+    long double sh, f;
+    long double x = 0;
     printf("Введите положительный шаг для переменной x: ");
-    scanf("%f", &sh);
+    scanf("%Lf", &sh);
     printf("x\t\t f(x)\n---------------------\n");
     do
     {
-        x = floorf(x * 100000) / 100000;
         f = perv(x);
         if (f > 0)
-        printf("%.2f\t\t %.2f\n", x, f);
+        printf("%.5Lf\t\t %.4Lf\n", x, f);
         else
-        printf("%.2f\t\t%.2f\n", x, f);
+        printf("%.5Lf\t\t%.4Lf\n", x, f);
         x = x + sh;
+        x = x * 10000000;
+        x = floor(x);
+        x = x / 10000000;;
     }
     while ((x >= 0) && (x <= 1));
     do
     {
-        x = floorf(x * 100000) / 100000;
         f = vtor(x);
         if (f > 0)
-        printf("%.2f\t\t %.2f\n", x, f);
+        printf("%.5Lf\t\t %.4Lf\n", x, f);
         else
-        printf("%.2f\t\t%.2f\n", x, f);
+        printf("%.5Lf\t\t%.4Lf\n", x, f);
         x = x + sh;
+        x = x * 10000000;
+        x = floor(x);
+        x = x / 10000000;
     }
     while ((x > 1) && (x <= 2));
     return 0;
