@@ -25,26 +25,26 @@ int main()
     {
         f = perv(x);
         if (f > 0)
-        printf("%.5Lf\t\t %.4Lf\n", x, f);
+        printf("%.10Lf\t\t %.4Lf\n", x, f);
         else
-        printf("%.5Lf\t\t%.4Lf\n", x, f);
+        printf("%.10Lf\t\t%.4Lf\n", x, f);
         x = x + sh;
-        x = x * 10000000;
+        x = x * 1000000000;
         x = floor(x);
-        x = x / 10000000;;
+        x = x / 1000000000;
     }
     while ((x >= 0) && (x <= 1));
     do
     {
         f = vtor(x);
         if (f > 0)
-        printf("%.5Lf\t\t %.4Lf\n", x, f);
+        printf("%.10Lf\t\t %.4Lf\n", x, f);
         else
-        printf("%.5Lf\t\t%.4Lf\n", x, f);
+        printf("%.10Lf\t\t%.4Lf\n", x, f);
         x = x + sh;
-        x = x * 10000000;
+        x = x * 1000000000;
         x = floor(x);
-        x = x / 10000000;
+        x = x / 1000000000;
     }
     while ((x > 1) && (x <= 2));
     return 0;
