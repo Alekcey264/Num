@@ -40,7 +40,6 @@ int main()
     a2 = 1;
     b2 = 2;
     n = 100;
-    //scanf("%Lf\n", &eps);
     do
     {
         integral = inh(a1, b1, n, 1) * 1000 + inh(a2, b2, n, 2) * 1000;
