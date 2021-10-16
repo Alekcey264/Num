@@ -2,79 +2,92 @@
 #include <stdlib.h>
 #include <time.h>
 
-void fill(int n, int a[])
+void fill(int n, int a[], int b[])
 {
     int i;
     for (i = 0; i < n; i++)
       {
           a[i] = rand() % (10) + 1;
+          b[i] = rand() % (10) + 1;
       }
 }
 
+int sozdanie(int a[], int b[], int ni)
+{
+    int k = 0;
+    for (int i = 0; i < ni; i++)
+    {
+        for (int j = 0; j < ni; j++)
+            {
+                if (a[i] == b[j])
+                    {
+                       k = k + 1;
+                    }
+            }
+    }
+    return (k);
+}
+
+void vivod(int a[], int ni)
+{
+    for (int i = 0; i < ni; i++)
+    {
+        printf("%i ", a[i]);
+    }
+}
+
+int proverka(int a[], int b[], int c[], int ni)
+{
+    int k = 0;
+    for (int i = 0; i < ni; i++)
+    {
+        for (int j = 0; j < ni; j++)
+          {
+              if (a[i] == b[j])
+                  {
+                      c[k] = a[i];
+                      k++;
+                  }
+          }
+    }
+    return (k);
+}
+
+int izbavlenie(int c[], int k)
+{
+    for (int i = 0; i <= (k - 1); i++)
+    {
+       for (int j = (i + 1); j <= k; j++)
+          {
+              if (c[i] == c[j])
+                  {
+                      for (int p = j; p <= k; p++)
+                      c[p] = c[p+1];
+                      k = k - 1;
+                      j = j - 1;
+                  }
+          }
+    }
+    return(k);
+}
 
 int main()
 {
     srand(time(NULL));
-    int ni, i, nj, j, o;
-    int p = 0;
-    int k = 0;
+    int ni, k;
     scanf("%i", &ni);
-    nj = ni;
     int A[ni];
-    int B[nj];
-    fill(ni, A);
-    fill(nj, B);
-    for (i = 0; i < ni; i++)
-    {
-        printf("%i ", A[i]);
-    }
+    int B[ni];
+    fill(ni, A, B);
+    vivod(A, ni);
     printf("\n");
-    for (j = 0; j < nj; j++)
-    {
-        printf("%i ", B[j]);
-    }
+    vivod (B, ni);
     printf("\n");
-    for (i = 0; i < ni; i++)
-    {
-        for (j = 0; j < nj; j++)
-            {
-              if (A[i] == B[j])
-                  {
-                      k++;
-                  }
-            }
-    }
+    k = sozdanie(A, B, ni);
     int C[k];
-    k = 0;
-    for (i = 0; i < ni; i++)
-    {
-        for (j = 0; j < nj; j++)
-          {
-              if (A[i] == B[j])
-                  {
-                      C[k] = A[i];
-                      k++;
-                  }
-          }
-    }
-    for (i = 0; i <= (k - 1); i++)
-    {
-       for (j = (i + 1); j <= k; j++)
-          {
-              if (C[i] == C[j])
-                  {
-                    for (p = j; p <= k; p++)
-                    C[p] = C[p+1];
-                    k = k - 1;
-                    j = j - 1;
-                  }
-          }
-    }
-    o = k;
-    for (k = 0; k < o; k++)
-    {
-        printf("%i ", C[k]);
-    }
+    k = proverka(A, B, C, ni);
+    k = izbavlenie (C, k);
+    vivod(C, k);
     printf("\n");
     return 0;
 }
