@@ -2,37 +2,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double inh(double t, double y, double u, int p)
+double f(double x)
+{
+    if ((x >= 0) && (x <= 1))
+        return (sqrt(x + 1) - sqrt(x) - 0.5);
+    return (exp(-x - 1 / x));
+}
+
+double inh(double a, double b, double n)
 {
     double inter = 0;
-    double l = (y - t) / u;
-    for (int i = 0; i < (u - 1); i++)
-      {
-          double k = (t + i * l) + (l / 2);
-          if (p == 1)
-            inter = inter + (sqrt(k + 1) - sqrt(k) - 0.5);
-          else if (p == 2)
-            inter = inter + exp(-k - 1 / k);
-      }
-    return (inter * l);
+    double h = (b - a) / n;
+    for (int i = 0; i < (n - 1); i++)
+    {
+        inter += f((a + i * h) + (h / 2));
+    }
+    return (inter * h);
 }
 
 
 int main()
 {
-    double n, a1, b1, b2, del, integral, integral2;
+    double n, a1, b1, del, integral, integral2;
     double eps;
     a1 = 0;
-    b1 = 1;
-    b2 = 2;
+    b1 = 2;
     n = 100;
     scanf("%lf", &eps);
+    integral = inh(a1, b1, n);
     do
     {
-        integral = inh(a1, b1, n, 1) + inh(b1, b2, n, 2);
-        integral2 = inh(a1, b1, (2 * n), 1) + inh(b1, b2, (2 * n), 2);
+        integral2 = inh(a1, b1, (2 * n));
         del = fabs((integral2 - integral)) / 3;
         n = 2 * n;
+        integral = integral2;
     }
     while (del >= eps);
     printf("%.9f\n", integral);
