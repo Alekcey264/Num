@@ -44,6 +44,8 @@ int main()
             i--;
         }
     }
+    //gcc lab92.c -Wall -o lab92
+    //asd zxc fgh das iop qwe sad bnm vbn asd jklaa
     //asd zxc fgh das iop qwe sad bnm tyu vbn asd jkl
     l++;
     for (i = 0; i < p; i++)
