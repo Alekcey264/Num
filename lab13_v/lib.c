@@ -212,4 +212,5 @@ Pilots *removest(Pilots *head)
         }
         p = n;
     }
+    return 0;
 }
